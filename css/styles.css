@@ -1,0 +1,122 @@
+/*Import the fonts used*/
+@import url('https://fonts.googleapis.com/css?family=Courgette|Open+Sans:400,800&display=swap');
+/*Basic reset*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Custom properties*/
+:root {
+    --dark-color: #333644;
+    --gray-solid: #C8C6C6;
+    --purple-transparent: rgba(132, 87, 124);
+    --purple-transparent-alt: rgba(53, 10, 79, .5);
+    --red-light: #C65F63;
+    --yellow-solid: #fa9e2c;
+    --gradient-color: linear-gradient(to right, var(--yellow-solid), var(--red-light));
+    --gradient-color-alt: linear-gradient(to right, var(--red-light), var(--yellow-solid));
+}
+
+/* nav list */
+html {
+  font-size: 10px;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6rem;
+  color: var(--dark-color);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+section {
+  padding: 5rem 0;
+}
+/* reusable content */
+.container {
+  width: 100%;
+  max-width: 120rem;
+  padding 0 1.5rem;
+  margin: 0 auto;
+}
+
+
+/* header styles */
+.header {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--purple-transparent);
+  z-index: 999;
+}
+/* header nav styles */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo img{
+  max-width: 80%;
+}
+.hamburger-menu {
+  font-size: 2.6rem;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  z-index: 1500;
+}
+.hamburger-menu .fa-times {
+  display: none;
+}
+.nav-list {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color:  var(--yellow-solid);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: 1400;
+  transform: scale(0);
+}
+
+.menu-open .nav-list {
+  opacity: 1;
+  tranform: scale(1);
+}
+
+.nav-item:not(:last-child) {
+  margin-bottom: .5rem;
+}
+
+.menu-open .nav-list {
+  opacity: 1;
+  tranform: scale(1);
+}
+
+
+
+.nav-link {
+  display: block;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 1rem;
+}
